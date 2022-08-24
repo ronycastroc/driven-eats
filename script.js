@@ -1,121 +1,114 @@
-let pra;  
-let beb;
-let pud;
-let nompra;
-let nombeb;
-let nompud;
-let valpra;
-let valbeb;
-let valpud;
-let nome;
-let end;
+let prato;  
+let bebida;
+let sobremesa;
+let nomePrato;
+let nomeBebida;
+let nomeSobremesa;
+let valorPrato;
+let valorBebida;
+let valorSobremesa;
 
-function clicou(pratoselec) {
-    let click = document.querySelector('.borda')
-    let checkup = document.querySelector('.ap')
-    
-    pra = pratoselec
-    nompra = pra.querySelector('.nomeprato').innerText
-    valpra = pra.querySelector('.valorprato').innerHTML
-    
+function selecionarPrato(elemento) {
+    const click = document.querySelector('.borda');   
+    prato = elemento;
+    nomePrato = prato.querySelector('.nomeprato').innerText;
+    valorPrato = prato.querySelector('.valorprato').innerHTML;    
 
-    if (click !== null && checkup !== null) {
-        click.classList.remove('borda')
-        checkup.classList.remove('ap')
+    if (click !== null) {
+        click.classList.remove('borda');        
     }
-    pratoselec.classList.add('borda')
-    pratoselec.querySelector('.check').classList.add('ap')
-    
-    liberar()
+
+    elemento.classList.add('borda');    
+        
+    liberar();
 }
  
 
-function clicou2(bebidaselec) {
-    let click = document.querySelector('.bebidaclick .borda')
-    
-    beb = bebidaselec
-    nombeb = beb.querySelector('.nomebeb').innerText
-    valbeb = beb.querySelector('.valorbeb').innerHTML
+function selecionarBebida(elemento) {
+    const click = document.querySelector('.bebidaclick .borda');    
+    bebida = elemento;
+    nomeBebida = bebida.querySelector('.nomebeb').innerText;
+    valorBebida = bebida.querySelector('.valorbeb').innerHTML;
     
     if (click !== null) {
-        click.classList.remove('borda')
+        click.classList.remove('borda');
     }
-    bebidaselec.classList.add('borda')
-    checkup.classList.add('ap')
+
+    elemento.classList.add('borda');
     
-    liberar()
+    liberar();
 }
 
 
-function clicou3(pudimselec) {
-    let click = document.querySelector('.pudimclick .borda')
-    pud = pudimselec
-    nompud = pud.querySelector('.nomepud').innerText
-    valpud = pud.querySelector('.valorpud').innerHTML
+function selecionarSobremesa(elemento) {
+    const click = document.querySelector('.pudimclick .borda');
+    sobremesa = elemento;
+    nomeSobremesa = sobremesa.querySelector('.nomepud').innerText;
+    valorSobremesa = sobremesa.querySelector('.valorpud').innerHTML;
     
     if (click !== null) {
-        click.classList.remove('borda')
+        click.classList.remove('borda');
     }
-    pudimselec.classList.add('borda') 
+    elemento.classList.add('borda');
 
-    liberar()
+    liberar();
 }
 
 function liberar() {
     
-    if (pra && beb && pud) {
-        let p = document.querySelector('.botaobarra p')
-        let botao = document.querySelector('.botaobarra')
-        botao.classList.add('selecionado')
-        p.innerHTML = 'Fechar Pedido'
-        
+    if (prato && bebida && sobremesa) {
+        const p = document.querySelector('.botaobarra p');
+        const botao = document.querySelector('.botaobarra');
+        botao.classList.add('selecionado');
+        p.innerHTML = 'Fechar Pedido';
+    }
 }
-}
 
-function liberarclick() {
-    let confirmar = document.querySelector('.confirmarcaixa') 
-    confirmar.classList.remove('escondido')
-    let praval = Number(valpra.substr(3)).toFixed(2)
-    let bebval = Number(valbeb.substr(3)).toFixed(2)
-    let pudval = Number(valpud.substr(3)).toFixed(2)
-    let total = Number(praval) + Number(bebval) + Number(pudval)
+function fecharPedido() {
+    const confirmar = document.querySelector('.confirmarcaixa') 
+    confirmar.classList.remove('escondido');
+    const opacity = document.querySelector('.box')
+    opacity.classList.add('opacity')
+    let pratoValor = Number(valorPrato.substr(3)).toFixed(2);
+    let bebidaValor = Number(valorBebida.substr(3)).toFixed(2);
+    let sobremesaValor = Number(valorSobremesa.substr(3)).toFixed(2);
+    let total = Number(pratoValor) + Number(bebidaValor) + Number(sobremesaValor);   
 
-    let spancomida = document.querySelector('.food > span:nth-child(1)')
-    let spanbebida = document.querySelector('.drink > span:nth-child(1)')
-    let spansobremesa = document.querySelector('.candy > span:nth-child(1)')
-    let spanvalcom = document.querySelector('.food > span:nth-child(2)')
-    let spanvalbeb = document.querySelector('.drink > span:nth-child(2)')
-    let spanvalsob = document.querySelector('.candy > span:nth-child(2)')
-    let spantotal = document.querySelector('.all > span:nth-child(2)')
-    let spanPedido = document.querySelector('.tudocerto > span')
-    
+    const spanComida = document.querySelector('.food > span:nth-child(1)');
+    const spanBebida = document.querySelector('.drink > span:nth-child(1)');
+    const spanSobremesa = document.querySelector('.candy > span:nth-child(1)');
+    const spanValCom = document.querySelector('.food > span:nth-child(2)');
+    const spanValBeb = document.querySelector('.drink > span:nth-child(2)');
+    const spanValSob = document.querySelector('.candy > span:nth-child(2)');
+    const spanTotal = document.querySelector('.all > span:nth-child(2)');
+    const spanPedido = document.querySelector('.tudocerto > span');
 
-    nome = prompt('Informe o seu nome.')
-    end = prompt('Informe seu endereço.')
+    const nome = prompt('Informe o seu nome.');
+    const endereco = prompt('Informe seu endereço.');
 
-    let texto = encodeURIComponent(`Olá, gostaria de fazer o pedido:
-        - Prato: ${nompra}
-        - Bebida: ${nombeb}
-        - Sobremesa: ${nompud}
+    const texto = encodeURIComponent(`Olá, gostaria de fazer o pedido:
+        - Prato: ${nomePrato}
+        - Bebida: ${nomeBebida}
+        - Sobremesa: ${nomeSobremesa}
         Total: R$ ${total.toFixed(2)}
         
         - Nome: ${nome}
-        - Endereço: ${end}`)
-    
+        - Endereço: ${endereco}`);    
 
-    spancomida.innerHTML = `${nompra}`
-    spanbebida.innerHTML = `${nombeb}`
-    spansobremesa.innerHTML = `${nompud}` 
-    spanvalcom.innerHTML = `R$${praval}`
-    spanvalbeb.innerHTML = `R$${bebval}`
-    spanvalsob.innerHTML = `R$${pudval}`
-    spantotal.innerHTML = `R$${total.toFixed(2)}`
+    spanComida.innerHTML = `${nomePrato}`;
+    spanBebida.innerHTML = `${nomeBebida}`;
+    spanSobremesa.innerHTML = `${nomeSobremesa}` ;
+    spanValCom.innerHTML = `R$${pratoValor}`;
+    spanValBeb.innerHTML = `R$${bebidaValor}`;
+    spanValSob.innerHTML = `R$${sobremesaValor}`;
+    spanTotal.innerHTML = `R$${total.toFixed(2)}`;
 
-    spanPedido.innerHTML = `<a href="https://wa.me/5521968249442?text=${texto}">Tudo certo, pode pedir!</a>`
+    spanPedido.innerHTML = `<a href="https://wa.me/5521968249442?text=${texto}">Tudo certo, pode pedir!</a>`;
 }
 
-
 function cancelar() {
-    let cancelar = document.querySelector('.confirmarcaixa') 
-    cancelar.classList.add('escondido')
+    const cancelar = document.querySelector('.confirmarcaixa');
+    const opacity = document.querySelector('.box');
+    cancelar.classList.add('escondido');
+    opacity.classList.remove('opacity');    
 }

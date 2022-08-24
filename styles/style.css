@@ -4,18 +4,22 @@ body {
     background-color: #e5e5e5;
     font-family: 'Roboto', sans-serif;
     position: relative;
+    
 }
 
 * {
     box-sizing: border-box;
+    
+}
+
+.opacity {
+    filter: opacity(30%);
 }
 
 header {
     background-color: #CF2B2B;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex;  
     position: fixed;
     top: 0;
     left: 0;
@@ -25,12 +29,10 @@ header {
 
 .topo {
     background-color: #CF2B2B;
-    width: 414px;
     height: 92px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    
+    justify-content: center;   
     
 }
 
@@ -76,6 +78,7 @@ footer {
     height: 61px;
     border-radius: 50px;
     display: table;
+    cursor: pointer;
 }
 
 .botaobarra > p {
@@ -108,7 +111,6 @@ footer {
     overflow-x: scroll;
 }
 
-
 .opcaoprato {
     background-color: white;
     display: flex;
@@ -119,16 +121,19 @@ footer {
     border-radius: 9px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.247);
     position: relative;
+    cursor: pointer;
 }
 
 .opcaoprato > img {
     width: 144px;
     height: 87px;
     margin: 18px 14px 0px 14px;
+    border-radius: 5px;
+    
 }
 
 .opcaoprato > p {
-    margin: 10px 0px 0px 14px;
+    margin: 10px 5px 0px 14px;
 }
 
 .opcaoprato > p:nth-child(2) {
@@ -148,7 +153,6 @@ footer {
     font-size: 16px;
     color: black;
 }
-
 
 .bebida {
     background-color: #e5e5e5;
@@ -171,7 +175,6 @@ footer {
     overflow-x: scroll;
 }
 
-
 .opcaobebida {
     background-color: white;
     display: flex;
@@ -182,12 +185,14 @@ footer {
     border-radius: 9px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.247);
     position: relative;
+    cursor: pointer;
 }
 
 .opcaobebida > img {
     width: 144px;
     height: 87px;
     margin: 18px 14px 0px 14px;
+    object-fit: cover;
 }
 
 .opcaobebida p {
@@ -235,7 +240,6 @@ footer {
     overflow-x: scroll;
 }
 
-
 .opcaosobremesa {
     background-color: white;
     display: flex;
@@ -246,6 +250,7 @@ footer {
     border-radius: 9px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.247);
     position: relative;
+    cursor: pointer;
 }
 
 .opcaosobremesa > img {
@@ -281,7 +286,6 @@ footer {
     transition-duration: 0.1s;
 }
 
-
 .check {
     color: #32B72F;
     font-size: 20px;
@@ -292,38 +296,9 @@ footer {
 
 }
 
-.ap {
-    display: initial;
+.borda .check {
+    display: block;
 }
-
-.check2 {
-    color: #32B72F;
-    font-size: 20px;
-    position: absolute;
-    right: 1px;
-    bottom: 1px;
-    display: none;
-
-}
-
-.ap2 {
-    display: initial;
-}
-
-.check3 {
-    color: #32B72F;
-    font-size: 20px;
-    position: absolute;
-    right: 1px;
-    bottom: 1px;
-    display: none;
-
-}
-
-.ap3 {
-    display: initial;
-}
-
 
 .selecionado {
     background-color: #32B72F;
@@ -338,6 +313,7 @@ a {
 .confirmarcaixa {
     display: flex;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .caixa {
@@ -347,7 +323,7 @@ a {
     border-radius: 9px;
     position: absolute;
     position: fixed;
-    z-index: 2;
+    z-index: 1;
     top: 130px;
     display: inline-flex;
     flex-direction: column;
@@ -367,8 +343,6 @@ a {
     display: inline-flex;
     justify-content: space-around;
 }
-
-
 
 .food > span:nth-child(1) {
     color: #FFFFFF;
@@ -456,6 +430,7 @@ a {
 
 .cancelar {
     text-align: center;
+    cursor: pointer;
 }
 
 .cancelar > span {
@@ -468,7 +443,6 @@ a {
     display: none;
     transition-duration: 1s;
 }
-
 
 
  

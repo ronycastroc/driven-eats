@@ -8,8 +8,11 @@
 
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="img/fast-food-icons-freeburger_107425.ico" type="image/x-icon">
 </head>
 <body>
+
+    
     <header>
         <div class="topo">
             <p>DrivenEats</p>
@@ -19,128 +22,129 @@
 
     <footer>  
         <div class="barra">
-            <div class="botaobarra" onclick="liberarclick()">
+            <div class="botaobarra" onclick="fecharPedido()">
                 <p>Selecione os 3 itens<br/>
                  para fechar o pedido</p>
             </div>
         </div> 
     </footer>
 
+    <div class="box">
+    
+        <section class="prato">
+            <p>Primeiro, seu prato</p>
 
-    <section class="prato">
-        <p>Primeiro, seu prato</p>
+            <div class="pratos">
+                <div class="opcaoprato" onclick=selecionarPrato(this)>
+                    <img src="img/frango_yin_yang 1.png" alt="">
+                    <p class="nomeprato">Frango Yin Yang</p>
+                    <p>Frango, Batata e Salada</p>
+                    <p class="valorprato">R$ 13.90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
+                
+                <div class="opcaoprato" onclick=selecionarPrato(this)>
+                    <img src="img/z-deli-review-hamburguesinha-2 (1).jpg" alt="">
+                    <p class="nomeprato">Batata Artesanal</p>
+                    <p>Batata frita, Carne desfiada e Catupiry</p>
+                    <p class="valorprato">R$ 18.90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
 
-        <div class="pratos">
-            <div class="opcaoprato" onclick=clicou(this)>
-                <img src="img/frango_yin_yang 1.png" alt="">
-                <p class="nomeprato">Frango Yin Yang</p>
-                <p>Um pouco de batata, um pouco de salada</p>
-                <p class="valorprato">R$ 13.90</p>
-                <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                <div class="opcaoprato" onclick=selecionarPrato(this)>
+                    <img src="img/vista-lateral-duplo-cheeseburger-com-rissois-de-carne-grelhada-queijo-e-folha-de-alface-entre-bolos-de-hamburguer_141793-4883.webp" alt="">
+                    <p class="nomeprato">Harburguer Artesanal</p>
+                    <p>2 blends de 120g</p>
+                    <p class="valorprato">R$ 21.90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
+                
+                <div class="opcaoprato" onclick=selecionarPrato(this)>
+                    <img src="img/5-itens-necessarios-para-se-tornar-um-pizzaiolo-neste-Dia-da-Pizza.jpg" alt="">
+                    <p class="nomeprato">Pizza Artesanal</p>
+                    <p>Pizza artesanal de calabresa</p>
+                    <p class="valorprato">R$ 16.90</p>
+                    <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                </div>
             </div>
-            
-            <div class="opcaoprato" onclick=clicou(this)>
-                <img src="img/frango_yin_yang 1.png" alt="">
-                <p class="nomeprato">Frango Yin</p>
-                <p>Um pouco de batata, e muita salada</p>
-                <p class="valorprato">R$ 14.90</p>
-                <ion-icon class="check" name="checkmark-circle"></ion-icon>
-            </div>
-
-            <div class="opcaoprato" onclick=clicou(this)>
-                <img src="img/frango_yin_yang 1.png" alt="">
-                <p class="nomeprato">Frango Yang</p>
-                <p>Muita batata, e um pouco de salada</p>
-                <p class="valorprato">R$ 15.90</p>
-                <ion-icon class="check" name="checkmark-circle"></ion-icon>
-            </div>
-            
-            <div class="opcaoprato" onclick=clicou(this)>
-                <img src="img/frango_yin_yang 1.png" alt="">
-                <p class="nomeprato">Frango Yang Yin</p>
-                <p>Muita batata, e muita salada</p>
-                <p class="valorprato">R$ 16.90</p>
-                <ion-icon class="check" name="checkmark-circle"></ion-icon>
-            </div>
-        </div>
-    </section>
-
-    <section class="bebida bebidaclick">
-        <p>Agora, sua bebida</p>
-
-        <div class="bebidas">
-            <div class="opcaobebida" onclick=clicou2(this)>
-                <img src="img/coquinha_gelada 1.png" alt="">
-                <p class="nomebeb">Coquinha Gelada</p>
-                <p>Lata 350ml</p>
-                <p class="valorbeb">R$ 4.90</p>
-                <ion-icon class="check" name="checkmark-circle"></ion-icon>
-            </div>
-            
-            <div class="opcaobebida" onclick=clicou2(this)>
-                <img src="img/coquinha_gelada 1.png" alt="">
-                <p class="nomebeb">Coquinha Quente</p>
-                <p>Lata 350ml</p>
-                <p class="valorbeb">R$ 3.90</p>
-                <ion-icon class="check" name="checkmark-circle"></ion-icon>
-            </div>
-
-            <div class="opcaobebida" onclick=clicou2(this)>
-                <img src="img/coquinha_gelada 1.png" alt="">
-                <p class="nomebeb">Coquinha Sem gás</p>
-                <p>Lata 350ml</p>
-                <p class="valorbeb">R$ 2.90</p>
-                <ion-icon class="check" name="checkmark-circle"></ion-icon>
-            </div>
-            
-            <div class="opcaobebida" onclick=clicou2(this)>
-                <img src="img/coquinha_gelada 1.png" alt="">
-                <p class="nomebeb">Coquinha Zero</p>
-                <p>Lata 350ml</p>
-                <p class="valorbeb">R$ 5.90</p>
-                <ion-icon class="check" name="checkmark-circle"></ion-icon>
-            </div>
-        </div>
         </section>
 
-    <section class="sobremesa pudimclick">
-            <p>Por fim, sua sobremesa</p>
-    
-            <div class="sobremesas">
-                <div class="opcaosobremesa" onclick=clicou3(this)>
-                    <img src="img/pudim 1.png" alt="">
-                    <p class="nomepud">Pudim P</p>
-                    <p>Apenas pudim</p>
-                    <p class="valorpud">R$ 6.90</p>
+        <section class="bebida bebidaclick">
+            <p>Agora, sua bebida</p>
+
+            <div class="bebidas">
+                <div class="opcaobebida" onclick=selecionarBebida(this)>
+                    <img src="img/coquinha_gelada 1.png" alt="">
+                    <p class="nomebeb">Coca-Cola</p>
+                    <p>Lata 350ml</p>
+                    <p class="valorbeb">R$ 5.90</p>
                     <ion-icon class="check" name="checkmark-circle"></ion-icon>
                 </div>
                 
-                <div class="opcaosobremesa" onclick=clicou3(this)>
-                    <img src="img/pudim 1.png" alt="">
-                    <p class="nomepud">Pudim M</p>
-                    <p>Apenas pudim</p>
-                    <p class="valorpud">R$ 7.90</p>
+                <div class="opcaobebida" onclick=selecionarBebida(this)>
+                    <img src="img/refrigerante_coca_cola_zero_lata_220ml_c_12_363_1_20201021152513.webp" alt="">
+                    <p class="nomebeb">Coca-Cola Zero</p>
+                    <p>Lata 220ml</p>
+                    <p class="valorbeb">R$ 4.90</p>
                     <ion-icon class="check" name="checkmark-circle"></ion-icon>
                 </div>
-    
-                <div class="opcaosobremesa" onclick=clicou3(this)>
-                    <img src="img/pudim 1.png" alt="">
-                    <p class="nomepud">Pudim G</p>
-                    <p>Apenas pudim</p>
-                    <p class="valorpud">R$ 8.90</p>
+
+                <div class="opcaobebida" onclick=selecionarBebida(this)>
+                    <img src="img/suco.webp" alt="">
+                    <p class="nomebeb">Suco da Fruta</p>
+                    <p>Suco Sabores 350ml</p>
+                    <p class="valorbeb">R$ 6.90</p>
                     <ion-icon class="check" name="checkmark-circle"></ion-icon>
                 </div>
                 
-                <div class="opcaosobremesa" onclick=clicou3(this)>
-                    <img src="img/pudim 1.png" alt="">
-                    <p class="nomepud">Pudim GG</p>
-                    <p>Apenas pudim</p>
-                    <p class="valorpud">R$ 9.90</p>
+                <div class="opcaobebida" onclick=selecionarBebida(this)>
+                    <img src="img/1621153712_1GG.webp" alt="">
+                    <p class="nomebeb">Água</p>
+                    <p>Garrafa 300ml</p>
+                    <p class="valorbeb">R$ 2.90</p>
                     <ion-icon class="check" name="checkmark-circle"></ion-icon>
                 </div>
             </div>
-    </section>
+            </section>
 
+        <section class="sobremesa pudimclick">
+                <p>Por fim, sua sobremesa</p>
+        
+                <div class="sobremesas">
+                    <div class="opcaosobremesa" onclick=selecionarSobremesa(this)>
+                        <img src="img/pudim 1.png" alt="">
+                        <p class="nomepud">Pudim</p>
+                        <p>Pudim de Leite</p>
+                        <p class="valorpud">R$ 6.90</p>
+                        <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                    </div>
+                    
+                    <div class="opcaosobremesa" onclick=selecionarSobremesa(this)>
+                        <img src="img/pave_dos_padres_facil_e_rapido_9212_orig.jpg" alt="">
+                        <p class="nomepud">Pavê</p>
+                        <p>Pavê de Chocolate</p>
+                        <p class="valorpud">R$ 7.90</p>
+                        <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                    </div>
+        
+                    <div class="opcaosobremesa" onclick=selecionarSobremesa(this)>
+                        <img src="img/receita-musse-pratica-de-maracuja.jpg" alt="">
+                        <p class="nomepud">Musse</p>
+                        <p>Musse de Maracuja</p>
+                        <p class="valorpud">R$ 8.90</p>
+                        <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                    </div>
+                    
+                    <div class="opcaosobremesa" onclick=selecionarSobremesa(this)>
+                        <img src="img/sorvete.jpg" alt="">
+                        <p class="nomepud">Sorvete</p>
+                        <p>Sorvete Sabores</p>
+                        <p class="valorpud">R$ 9.90</p>
+                        <ion-icon class="check" name="checkmark-circle"></ion-icon>
+                    </div>
+                </div>
+        </section>
+    </div>
    
     <div class="confirmarcaixa escondido">
         <div class="caixa">
@@ -169,10 +173,8 @@
                 <span>Cancelar</span>
             </div>
         </div>
+        
     </div>     
-    
-    
-
 
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="script.js"></script>
